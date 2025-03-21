@@ -9,4 +9,4 @@ crontab -l
 ```
 
 **Behaviors**
-- Do not rerun
+- **cron jobs will be skipped** if your laptop is off or asleep at the scheduled execution time. Cron itself **does not retry or reschedule missed tasks**.
