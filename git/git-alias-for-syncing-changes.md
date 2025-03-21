@@ -12,3 +12,15 @@ git config --global alias.sync-note '!git add . && git commit -m "sync-note: $(d
 
 git sync-note
 ```
+
+```
+git config --global alias.sync-note '!f() { 
+  if [ -z "$1" ]; then 
+    MSG="sync-note: $(date +"%Y-%m-%d %H:%M:%S")"; 
+  else 
+    MSG="sync-note: $1"; 
+  fi; 
+  git add . && git commit -m "$MSG" && git push origin $(git branch --show-current); 
+}; f'
+git sync-note [MESSAGE]
+```
