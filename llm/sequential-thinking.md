@@ -18,6 +18,23 @@ https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking
 }
 ```
 
+```
+{
+  "name": "think",
+  "description": "Use the tool to think about something. It will not obtain new information or make any changes to the repository, but just log the thought. Use it when complex reasoning or brainstorming is needed. For example, if you explore the repo and discover the source of a bug, call this tool to brainstorm several unique ways of fixing the bug, and assess which change(s) are likely to be simplest and most effective. Alternatively, if you receive some test results, call this tool to brainstorm ways to fix the failing tests.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "thought": {
+        "type": "string",
+        "description": "Your thoughts."
+      }
+    },
+    "required": ["thought"]
+  }
+}
+```
+
 >While it sounds similar to extended thinking, it's a different concept. Extended thinking is all about what Claude does before it starts generating a response. With extended thinking, Claude deeply considers and iterates on its plan before taking action. The "think" tool is for Claude, once it starts generating a response, to add a step to stop and think about whether it has all the information it needs to move forward. This is particularly helpful when performing long chains of tool calls or in long multi-step conversations with the user.
 
 
@@ -63,3 +80,5 @@ User wants to book 3 tickets to NYC with 2 checked bags each
 5. Get explicit confirmation for booking
 </think_tool_example_2>
 ```
+
+![[Pasted image 20250322080715.png]]
